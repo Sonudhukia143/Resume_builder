@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "express",
+    "node",
+    "mongodb"
+  ],
+  "license": "ISC",
+  "author": "Sonudhukia143",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "npm run test"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0",
+    "nodemon": "^3.1.10"
+  }
+}
