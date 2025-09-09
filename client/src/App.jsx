@@ -4,18 +4,18 @@ import Register from './routes/Register'
 import Dashboard from './routes/Dashboard';
 
 function App() {
-  const [user,setUser] = useState(null);
+  const [user, setUser] = useState(false);
 
   return (
-    <>
-    {
-      // user || user != null
-      // ?
-      //     <Register />
-      //     :
+    <div>
+      {
+        !user
+          ?
+          <Register setUser={setUser}/>
+          :
           <Dashboard />
-    }
-    </>
+      }
+    </div>
   )
 }
 
