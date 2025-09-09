@@ -1,6 +1,7 @@
+import { forwardRef } from "react";
 import { Template1, Template2 } from "../samples/ResumeTemplates.jsx";
 
-const ResumeView = ({ data, number ,ref }) => {
+const ResumeView = forwardRef(({ data, number },ref ) => {
     return (
         <div className="flex flex-col md:flex-row min-h-screen">
             <div id="resume-preview" className="bg-white shadow-lg p-6">
@@ -13,6 +14,6 @@ const ResumeView = ({ data, number ,ref }) => {
             </div>
         </div>
     );
-};
+});
 
 export default ResumeView;

@@ -1,13 +1,7 @@
-@media print {
-    body * {
-        visibility: hidden;
-        /* Hide everything by default */
-    }
+.printContent {
+  display: block;
 
-    .print-container,
-    .print-container * {
-        visibility: visible;
-        /* Show only the print container */
-    }
-
+  @media print {
+    display: block;
+  }
 }
