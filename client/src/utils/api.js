@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api";
+const API_URL = "https://resume-builder-11qc.onrender.com/api";
 
 const request = async (endpoint , method = "POST", body = null) => {
     const res = await fetch(`${API_URL}/${endpoint}`, {
