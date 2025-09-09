@@ -1,1 +1,0 @@
-NOTE: npm was too slow and installations were lagging so I used pnpm for faster installation if your npm works ok locally you can use npm to install deps it'll work fine.
