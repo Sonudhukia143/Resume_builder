@@ -1,24 +1,23 @@
 import express from 'express';
 import cors from 'cors';
 import AuthorizeRouter from './routes/Authorization.js';
+import dotenv from "dotenv";
+import connectDB, { corsOptions } from './utils/connectDB.js';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
-
-// Initialize database
-
 
 // Routes
 AuthorizeRouter(app);
 app.get("/api/test", (req,res) => {
     return res.status(200).json({message: "API is working"});
 });
-
-// Error handling
 
 // Not Found Route
 app.use((req,res) => {
@@ -28,9 +27,7 @@ app.use((req,res) => {
 // Start server
 async function start() {
   try {
-
-    // Intialize database connection
-    console.log('Database initialized');
+    await connectDB();
 
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
@@ -42,10 +39,3 @@ async function start() {
 }
 
 start();
-
-// Graceful shutdown
-// process.on('SIGTERM', async () => {
-//   console.log('SIGTERM received, shutting down gracefully');
-//   await db.close();
-//   process.exit(0);
-// });

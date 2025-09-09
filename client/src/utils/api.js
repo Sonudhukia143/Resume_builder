@@ -1,6 +1,6 @@
-const API_URL = "https://api.example.com";
+const API_URL = "http://localhost:3000/api";
 
-const request = async (endpoint, method = 'GET', body = null) => {
+const request = async (endpoint , method = "POST", body = null) => {
     const res = await fetch(`${API_URL}/${endpoint}`, {
         method,
         headers: {
